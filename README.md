@@ -109,7 +109,13 @@ Acesse o diretório "includes"
   cd includes
 ```
 
-Edite o arquivo "config.php" e altere as variáveis para acesso do frontend e conexão com backend.
+Edite o arquivo "config.php" e altere as variáveis para acesso do frontend e conexão com backend do [WhatsMass](https://github.com/rubenzsousa/whatsmass).
+
+```bash
+    $urlBase = 'http://localhost/frontwhatsmass/';
+    $urlAPI = 'http://localhost:4000/';
+```
+
 Pronto, a API estará conectada a uma aplicação PHP que deixará você fazer o envio em massa das mensagens.
 
 
