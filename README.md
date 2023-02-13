@@ -89,6 +89,17 @@ Rode a API
 | `number` | `numérico` | Número para envio do WhatsApp |
 
 
+# Para usar um frontend junto da API
+
+Clone o repositório [FrontWhatsMass](https://github.com/rubenzsousa/frontwhatsmass)
+
+```bash
+  git clone https://github.com/rubenzsousa/frontwhatsmass
+```
+Acesso o diretório "includes", abra o arquivo "config.php" e lá edite as variáveis inserindo a url base do frontend e a url da API.
+Com o backend rodando e a url setada no frontend você já pode usar de forma visual as funções da API.
+
+
 # Feedback
 
 Se você tiver algum feedback, por favor nos deixe saber por meio de contato@meupainel.cloud
