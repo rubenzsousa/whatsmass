@@ -96,8 +96,21 @@ Clone o repositório [FrontWhatsMass](https://github.com/rubenzsousa/frontwhatsm
 ```bash
   git clone https://github.com/rubenzsousa/frontwhatsmass
 ```
-Acesso o diretório "includes", abra o arquivo "config.php" e lá edite as variáveis inserindo a url base do frontend e a url da API.
-Com o backend rodando e a url setada no frontend você já pode usar de forma visual as funções da API.
+
+Configurar FrontEnd
+
+```bash
+  cd frontwhatsmass
+```
+
+Acesse o diretório "includes"
+
+```bash
+  cd includes
+```
+
+Edite o arquivo "config.php" e altere as variáveis para acesso do frontend e conexão com backend.
+Pronto, a API estará conectada a uma aplicação PHP que deixará você fazer o envio em massa das mensagens.
 
 
 # Feedback
