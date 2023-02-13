@@ -94,7 +94,7 @@ Rode a API
 Clone o repositório [FrontWhatsMass](https://github.com/rubenzsousa/frontwhatsmass)
 
 ```bash
-  git clone https://github.com/rubenzsousa/frontwhatsmass
+  git clone https://github.com/rubenzsousa/frontwhatsmass.git
 ```
 
 Configurar FrontEnd
