@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WhatsMass - Disparador de WhatsApp em massa</title>
+</head>
+<link href="https://getbootstrap.com/docs/5.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style type="text/css">
+	bg{
+		background-color: black;
+	}
+	#linkservico{
+		text-decoration: none;
+		color: #000;
+	}
+	#statusapi{
+		list-style-type: none;
+	}
+	.rodape { 
+		position:absolute; 
+		bottom:0px; 
+		width:85%; 
+	}
+	.rodape span{
+		color:#000;
+	}
+	.rodape a{
+		color:#000;
+	}
+</style>
+<body>
+
+	<main>
+		<div class="container py-4">
+		  <header class="pb-3 mb-4 border-bottom">
+			<a href="/" class="d-flex align-items-center text-dark text-decoration-none">
+			  <span class="fs-4">WhatsMass - Disparador de WhatsApp em massa</span>
+			</a>
+		  </header>
+
+		  <div class="row align-items-md-stretch">
+			<div class="col-md-6">
+			  <div class="h-100 p-5 bg-dark border rounded-3 text-light">
+				  <center>				
+					<h3 id="statusconectado">Dispositivo Conectado, o serviço de envio de mensagens está pronto</h3>					
+					<img src="" alt="QR Code" id="qrcode">
+				</center>
+			  </div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="h-100 p-5 bg-dark border rounded-3 text-light">
+					<center>
+						<img src="https://media.tenor.com/yCUEQX0mze0AAAAM/scan-gif-scanning.gif" id="gifQrCode" alt="">
+					</center>
+						<p>Status da API:</p>						
+							<ul id="statusapi" class="logs"></ul>
+				</div>
+			  </div>			
+		  	</div>
+
+			  <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top rodape">
+				<div class="col-md-4 d-flex align-items-center">				
+					<span id="anoAtualspan">&copy;  </span><span>&nbsp; Rubens Sousa</span>
+				</div>
+				
+				<div class="col-md-4 d-flex align-items-right">
+					<a href="https://github.com/rubenzsousa" target="_blank"> <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" width="30" height="30" alt=""></a>
+				</div>		  
+			</footer>
+	  
+		</div>
+	  </main>
+	  
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.4/socket.io.js" crossorigin="anonymous"></script>
+
+	<script>
+		const dataAtual = new Date();
+		const anoAtual = dataAtual.getFullYear();
+		document.querySelector("#anoAtualspan").textContent = anoAtual
+
+		$(document).ready(function() {
+			var socket = io();		
+
+			$('#statusconectado').hide();
+			$('#linkservico').hide();
+			
+			socket.on('message', function(msg) {
+				$('.logs').append($('<li>').text(msg));
+			});		
+
+			socket.on('qr', function(src) {
+				$('#qrcode').attr('src', src);
+				$('#qrcode').show();
+				$('#gifQrCode').show();
+				$('#statusconectado').hide();
+				$('#linkservico').hide();
+			});
+
+			socket.on('ready', function(data) {
+				$('#qrcode').hide();
+				$('#gifQrCode').hide();				
+			});
+
+			socket.on('authenticated', function(data) {
+				$('#qrcode').hide();
+				$('#gifQrCode').hide();
+				$('#statusconectado').show();
+				$('#linkservico').show();
+			});
+
+			socket.on('disconnected', function(data){			
+				$('#gifQrCode').show();
+				$('#statusconectado').hide();
+				$('#linkservico').hide();			
+				
+			});
+		});
+
+		
+		
+		
+
+	</script>
+</body>
+</html>
