@@ -89,7 +89,16 @@ Rode a API
 | `number` | `numérico` | Número para envio do WhatsApp |
 
 
+# Feedback
+
+Se você tiver algum feedback, por favor nos deixe saber por meio de contato@meupainel.cloud
+
+
 # Stack utilizada
 
 **Back-end:** Node, Express
+
+
+# 🚀 Sobre mim
+Gosto de desenvolver ferramentas úteis e de fácil uso e que sejam acessíveis a todos.
 
