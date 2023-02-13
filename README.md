@@ -9,7 +9,7 @@ O Backend do Whatsmass é baseado no [whatsapp-web.js](https://github.com/pedros
 
 # Como funciona
 
-Rode a API localmente ou na nuvem, escaneie o Qr Code com seu app do WhatsApp e utilize um softwares para executar as requisições nos endpoints da API.
+Rode a API localmente ou na nuvem, escaneie o Qr Code com seu app do WhatsApp e utilize um software para executar as requisições nos endpoints da API.
 
 # Screenshots
 ![WhatsMass](https://user-images.githubusercontent.com/25587189/218510332-c35225d7-1516-4842-875f-143c6f4f6792.png)
